@@ -43,15 +43,12 @@ The 4-bit Ripple Carry Adder is designed with the following port interfaces and 
 </p>
 
 **4. Module Descriptions:**
-
 To implement the structural architecture shown above, the design is hierarchically partitioned into two main levels:
-
 * **Sub-Module: 1-Bit Full Adder (`full_adder`)**
     * **Role:** The fundamental building block of the design. It computes the arithmetic addition of two single data bits (`a`, `b`) and a carry-in bit (`cin`).
     * **Implementation:** Built entirely using continuous assignments with bitwise logic operators to represent standard Gate-Level primitives:
         * $Sum = a \oplus b \oplus cin$
         * $C_{out} = (a \cdot b) + (cin \cdot (a \oplus b))$
-
 * **Top Module: 4-Bit RCA Top (`rca_4bit`)**
     * **Role:** The top-level wrapper that constructs the 4-bit parallel adder.
     * **Implementation:** Utilizes **Structural Modeling**. It instantiates four discrete `full_adder` blocks and routes the internal wire connections. The critical path is formed by chaining the carry bits: the `cout` of stage $i$ is directly hardwired to the `cin` of stage $i+1$. This demonstrates the characteristic "ripple" effect, where the Most Significant Bit (MSB) must wait for the carry signal to propagate through all lower-order stages.
