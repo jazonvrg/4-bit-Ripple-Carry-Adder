@@ -43,7 +43,7 @@ The 4-bit Ripple Carry Adder is designed with the following port interfaces and 
 </p>
 
 **4. Module Descriptions:**
-To implement the structural architecture shown above, the design is hierarchically partitioned into two main levels:
+* To implement the structural architecture shown above, the design is hierarchically partitioned into two main levels:
 * **Sub-Module: 1-Bit Full Adder (`full_adder`)**
     * **Role:** The fundamental building block of the design. It computes the arithmetic addition of two single data bits (`a`, `b`) and a carry-in bit (`cin`).
     * **Implementation:** Built entirely using continuous assignments with bitwise logic operators to represent standard Gate-Level primitives:
